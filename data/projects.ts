@@ -36,40 +36,11 @@ export const projects: Project[] = [
       { title: 'Complex Regex Parsing', content: 'Advanced Regex patterns to sanitize torrent filenames, extract resolution (4K, 1080p), and determine audio codecs for quality badges.' },
       { title: 'Performance Optimization', content: 'ServiceWorker implementation with a "Network First" strategy for navigation but aggressive asset caching.' },
       { title: 'Bot Protection', content: 'Specific routing logic in robots.txt and sitemap.xml to guide Googlebot while blocking spider traps.' }
-    ]
-  },
-  {
-    id: 'magnetar',
-    title: 'Magnetar',
-    tagline: 'Browser-based BitTorrent with WASM.',
-    category: 'P2P / WebAssembly',
-    executiveSummary: 'Magnetar is a decentralized media player that allows users to stream high-quality video (4K, HDR, HEVC) directly from the BitTorrent network via Magnet links, without requiring a backend server or external software. It overcomes traditional browser limitations by implementing a custom Service Worker proxy to stream binary data to the HTML5 video player and utilizes WebAssembly (FFmpeg) to decode professional audio formats.',
-    techStack: [
-      'React 18',
-      'TypeScript',
-      'WebTorrent',
-      'Video.js',
-      'FFmpeg.wasm',
-      'Service Workers',
-      'IndexedDB',
-      'Vite'
     ],
-    keyFeatures: [
-      { title: 'Instant Playback', content: 'Streams video sequentially based on priority, allowing playback to start before the file is fully downloaded.' },
-      { title: 'Universal Format Support', content: 'Automatically detects unsupported audio codecs (AC3, EAC3, DTS) and transcodes them in real-time to WAV using WebAssembly.' },
-      { title: 'Smart Caching (Offline Mode)', content: 'Uses a custom IDBChunkStore to save downloaded chunks to IndexedDB, enabling instant resume across sessions and offline playback.' },
-      { title: 'Network Visualization', content: '"Stats for Nerds" overlay providing real-time data on swarm health, peer connections, and throughput.' },
-    ],
-    architecture: [
-      { title: 'The Streaming Pipeline', content: 'The Service Worker intercepts HTTP requests from the video player and opens a MessageChannel to the Main Thread. The Main Thread pulls binary chunks from the P2P swarm and streams them back via the Service Worker.' },
-      { title: 'Audio Transcoding Engine', content: 'Analyzes file mimetype. If unsupported, spins up an FFmpeg WebAssembly instance to pipe audio tracks through FFmpeg, converting to PCM/WAV on the fly.' },
-      { title: 'Persistence Layer', content: 'Custom storage adapter for WebTorrent that intercepts read/write requests and saves pieces as Blobs into IndexedDB.' }
-    ],
-    technicalHighlights: [
-      { title: 'Polyfilling Node.js', content: 'Shimmed complex Node.js modules (Buffer, stream, events) to make the BitTorrent protocol work inside a browser.' },
-      { title: 'Complex Peer ID Generation', content: 'Implemented logic to mimic various torrent clients (Azureus, uTorrent) to prevent blocking.' },
-      { title: 'Memory Management', content: 'Implemented strict memory limits (1.5GB) in the WASM transcoder to prevent browser tab crashes.' }
-    ]
+    links: {
+      demo: 'https://pwolimovies.vercel.app/en',
+      repo: 'https://github.com/kuttydevil/pwoli-movies'
+    }
   },
   {
     id: 'aura-console',
@@ -102,7 +73,11 @@ export const projects: Project[] = [
       { title: 'AudioWorklet Implementation', content: 'Moved audio processing off the main thread to prevent UI freezing and audio crackling.' },
       { title: 'Bi-directional Buffering', content: 'Custom jitter buffer queues incoming audio chunks and plays them sequentially to handle network latency.' },
       { title: 'Sandboxed Code Execution', content: 'Security layer running AI-generated code in a distinct Worker scope.' }
-    ]
+    ],
+    links: {
+      demo: '#',
+      repo: '#'
+    }
   },
   {
     id: 'the-council',
@@ -133,7 +108,48 @@ export const projects: Project[] = [
       { title: 'Prompt Engineering Architecture', content: 'Masterclass in conditioning, explicitly programming acoustic profiles and behavior protocols into the system prompt.' },
       { title: 'Intelligent Audio Buffering', content: 'Queue system serializes decoding of audio chunks to prevent race conditions and out-of-order playback.' },
       { title: 'PCM Transcoding', content: 'Manually implemented float32ToInt16PCM conversion to handle raw binary protocols.' }
-    ]
+    ],
+    links: {
+      demo: '#',
+      repo: '#'
+    }
+  },
+  {
+    id: 'magnetar',
+    title: 'Magnetar',
+    tagline: 'Browser-based BitTorrent with WASM.',
+    category: 'P2P / WebAssembly',
+    executiveSummary: 'Magnetar is a decentralized media player that allows users to stream high-quality video (4K, HDR, HEVC) directly from the BitTorrent network via Magnet links, without requiring a backend server or external software. It overcomes traditional browser limitations by implementing a custom Service Worker proxy to stream binary data to the HTML5 video player and utilizes WebAssembly (FFmpeg) to decode professional audio formats.',
+    techStack: [
+      'React 18',
+      'TypeScript',
+      'WebTorrent',
+      'Video.js',
+      'FFmpeg.wasm',
+      'Service Workers',
+      'IndexedDB',
+      'Vite'
+    ],
+    keyFeatures: [
+      { title: 'Instant Playback', content: 'Streams video sequentially based on priority, allowing playback to start before the file is fully downloaded.' },
+      { title: 'Universal Format Support', content: 'Automatically detects unsupported audio codecs (AC3, EAC3, DTS) and transcodes them in real-time to WAV using WebAssembly.' },
+      { title: 'Smart Caching (Offline Mode)', content: 'Uses a custom IDBChunkStore to save downloaded chunks to IndexedDB, enabling instant resume across sessions and offline playback.' },
+      { title: 'Network Visualization', content: '"Stats for Nerds" overlay providing real-time data on swarm health, peer connections, and throughput.' },
+    ],
+    architecture: [
+      { title: 'The Streaming Pipeline', content: 'The Service Worker intercepts HTTP requests from the video player and opens a MessageChannel to the Main Thread. The Main Thread pulls binary chunks from the P2P swarm and streams them back via the Service Worker.' },
+      { title: 'Audio Transcoding Engine', content: 'Analyzes file mimetype. If unsupported, spins up an FFmpeg WebAssembly instance to pipe audio tracks through FFmpeg, converting to PCM/WAV on the fly.' },
+      { title: 'Persistence Layer', content: 'Custom storage adapter for WebTorrent that intercepts read/write requests and saves pieces as Blobs into IndexedDB.' }
+    ],
+    technicalHighlights: [
+      { title: 'Polyfilling Node.js', content: 'Shimmed complex Node.js modules (Buffer, stream, events) to make the BitTorrent protocol work inside a browser.' },
+      { title: 'Complex Peer ID Generation', content: 'Implemented logic to mimic various torrent clients (Azureus, uTorrent) to prevent blocking.' },
+      { title: 'Memory Management', content: 'Implemented strict memory limits (1.5GB) in the WASM transcoder to prevent browser tab crashes.' }
+    ],
+    links: {
+      demo: 'https://magnetar-psi.vercel.app/',
+      repo: '#'
+    }
   },
   {
     id: 'pwoli-search',
@@ -165,7 +181,11 @@ export const projects: Project[] = [
       { title: 'Polymorphic Scraping', content: 'Handles disparate data structures (JSON, HTML Tables, DOM trees) within a single unified interface.' },
       { title: 'Advanced CSS', content: 'Custom keyframe animations and glassmorphism utility classes for a native app feel.' },
       { title: 'Error Boundaries', content: 'Defensive scraping logic ensures stability even if source site HTML structures change.' }
-    ]
+    ],
+    links: {
+      demo: 'https://pwolisearch.vercel.app/',
+      repo: '#'
+    }
   },
   {
     id: 'prohome-assist',
@@ -196,7 +216,11 @@ export const projects: Project[] = [
       { title: 'React 19 Implementation', content: 'Utilizes the latest bleeding-edge React features.' },
       { title: 'Complex Prompt Engineering', content: 'Engineered a state-machine within the prompt to force the LLM to behave like a structured form wizard.' },
       { title: 'SEO Engineering', content: 'Embedded massive structured JSON-LD graphs for local business schema.' }
-    ]
+    ],
+    links: {
+      demo: 'https://homepro-three.vercel.app/',
+      repo: '#'
+    }
   },
   {
     id: 'nexus-ai',
@@ -228,7 +252,11 @@ export const projects: Project[] = [
       { title: 'Explainable AI (XAI)', content: 'Renders raw chain-of-thought to build enterprise trust.' },
       { title: 'Database-Driven Realtime State', content: 'Custom hooks subscribe to PostgreSQL changes for a completely reactive UI.' },
       { title: 'Defensive Prompting', content: 'Structured prompts with few-shot examples ensure deterministic code generation.' }
-    ]
+    ],
+    links: {
+      demo: '#',
+      repo: '#'
+    }
   },
   {
     id: 'p4parts',
@@ -258,7 +286,11 @@ export const projects: Project[] = [
       { title: 'Regex-Heavy Validation', content: 'Strict input sanitization for region-specific phone formats.' },
       { title: 'Database Security (RLS)', content: 'Strict Row Level Security policies ensure API security.' },
       { title: 'Performance Animation', content: 'CSS-based animations for logistics visualizations to keep main thread free.' }
-    ]
+    ],
+    links: {
+      demo: 'https://p4parts.com',
+      repo: '#'
+    }
   },
   {
     id: 'al-qatarsouq',
@@ -288,7 +320,11 @@ export const projects: Project[] = [
       { title: 'Database Diagnostics', content: 'Admin tool queries Postgres system catalogs to find and fix missing security policies.' },
       { title: 'Dual-Language Architecture', content: 'Full RTL layout support and dynamic font switching for Arabic.' },
       { title: 'Defensive AI Coding', content: 'Logs raw AI output to debug hallucinations in production.' }
-    ]
+    ],
+    links: {
+      demo: 'https://alqatarsouq.com/',
+      repo: '#'
+    }
   },
   {
     id: 'flowtiva',
@@ -320,6 +356,10 @@ export const projects: Project[] = [
       { title: 'Concurrency Locking', content: 'Postgres RPC functions ensure atomic job claiming in a multi-server environment.' },
       { title: 'AI Governance', content: 'Tracks token usage and enforces rate limits per tenant.' },
       { title: 'Multi-Tenancy RLS', content: 'Strict data isolation ensures users only access their own data.' }
-    ]
+    ],
+    links: {
+      demo: 'https://flowtiva.vercel.app/',
+      repo: '#'
+    }
   }
 ];

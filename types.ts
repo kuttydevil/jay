@@ -9,6 +9,11 @@ export interface Section {
   content: string;
 }
 
+export interface ProjectLinks {
+  demo?: string;
+  repo?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -19,6 +24,7 @@ export interface Project {
   keyFeatures: Section[];
   architecture: Section[];
   technicalHighlights: Section[];
+  links?: ProjectLinks;
 }
 
 export interface StatTile {

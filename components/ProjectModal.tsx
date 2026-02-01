@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { X, Check, Server, Code, Cpu } from 'lucide-react';
+import { X, Check, Server, Code, Cpu, ExternalLink, Github } from 'lucide-react';
 import { Project } from '../types';
 
 interface ProjectModalProps {
@@ -42,7 +42,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
       >
         {/* Header */}
         <div className="flex justify-between items-start p-6 md:p-10 border-b border-white/5 bg-[#141414]">
-          <div>
+          <div className="flex-1 mr-8">
             <div className="flex items-center gap-3 mb-3">
                <span className="px-3 py-1 rounded-full border border-stokt-accent/30 bg-stokt-accent/10 text-stokt-accent text-xs font-mono uppercase tracking-widest">
                   {project.category}
@@ -52,9 +52,35 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-2">
               {project.title}
             </h2>
-            <p className="text-lg md:text-xl text-stokt-subtext font-light">
+            <p className="text-lg md:text-xl text-stokt-subtext font-light mb-6">
               {project.tagline}
             </p>
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap gap-4">
+               {project.links?.demo && (
+                 <a 
+                   href={project.links.demo} 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="flex items-center gap-2 px-6 py-2 bg-stokt-accent text-white rounded-full text-xs font-mono uppercase tracking-widest hover:bg-white hover:text-black transition-colors"
+                 >
+                   <span>Launch System</span>
+                   <ExternalLink size={14} />
+                 </a>
+               )}
+               {project.links?.repo && (
+                 <a 
+                   href={project.links.repo} 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="flex items-center gap-2 px-6 py-2 bg-white/5 border border-white/10 text-white rounded-full text-xs font-mono uppercase tracking-widest hover:bg-white/10 transition-colors"
+                 >
+                   <span>Source Code</span>
+                   <Github size={14} />
+                 </a>
+               )}
+            </div>
           </div>
           <button 
             onClick={onClose}

@@ -50,7 +50,7 @@ export const About: React.FC = () => {
 
               <div className="mt-12 flex gap-12 border-t border-stokt-border pt-8">
                  <div>
-                    <div className="text-4xl font-medium text-white">2+</div>
+                    <div className="text-4xl font-medium text-white">3+</div>
                     <div className="text-xs font-mono text-stokt-subtext mt-2 uppercase tracking-wide">Years Exp.</div>
                  </div>
                  <div>

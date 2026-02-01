@@ -1,7 +1,15 @@
+
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 export const Footer: React.FC = () => {
+  const socials = [
+    { name: 'Github', url: 'https://github.com/kuttydevil' },
+    { name: 'LinkedIn', url: '#' },
+    { name: 'Twitter', url: '#' },
+    { name: 'Contra', url: '#' }
+  ];
+
   return (
     <footer id="contact" className="bg-stokt-bg pt-32 pb-12 border-t border-stokt-border relative overflow-hidden">
       
@@ -39,9 +47,15 @@ export const Footer: React.FC = () => {
            <div className="flex flex-col gap-4">
               <span className="text-bracket">Socials</span>
               <div className="flex gap-6">
-                 {['Github', 'LinkedIn', 'Twitter', 'Contra'].map(platform => (
-                    <a key={platform} href="#" className="text-sm text-stokt-subtext hover:text-white transition-colors">
-                       {platform}
+                 {socials.map(platform => (
+                    <a 
+                      key={platform.name} 
+                      href={platform.url} 
+                      target={platform.url.startsWith('http') ? "_blank" : "_self"}
+                      rel="noopener noreferrer"
+                      className="text-sm text-stokt-subtext hover:text-white transition-colors"
+                    >
+                       {platform.name}
                     </a>
                  ))}
               </div>
