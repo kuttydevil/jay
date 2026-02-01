@@ -38,7 +38,7 @@ export const projects: Project[] = [
       { title: 'Bot Protection', content: 'Specific routing logic in robots.txt and sitemap.xml to guide Googlebot while blocking spider traps.' }
     ],
     links: {
-      demo: 'https://pwolimovies.vercel.app/en',
+      demo: 'https://pwolimovies.vercel.app/',
       repo: 'https://github.com/kuttydevil/pwoli-movies'
     }
   },
