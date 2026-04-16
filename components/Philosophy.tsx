@@ -18,7 +18,7 @@ export const Philosophy: React.FC = () => {
            </div>
 
            {/* Right Col - Content */}
-           <div className="lg:col-span-7 flex flex-col gap-24">
+           <div className="lg:col-span-7 flex flex-col gap-16 md:gap-24">
               
               <div className="space-y-6">
                  <p className="text-xl md:text-2xl text-stokt-subtext font-light leading-relaxed">

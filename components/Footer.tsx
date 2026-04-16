@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-16 mb-32">
            <div>
               <span className="text-bracket mb-6 block">( SERIOUSLY )</span>
-              <h2 className="text-7xl md:text-9xl font-bold text-white tracking-tighter leading-[0.85] mb-8">
+              <h2 className="text-5xl xs:text-6xl md:text-9xl font-bold text-white tracking-tighter leading-[0.85] mb-8 break-words max-w-[full]">
                  LET'S <br />
                  <span className="text-stokt-accent">SCALE.</span>
               </h2>
@@ -33,10 +33,10 @@ export const Footer: React.FC = () => {
               </p>
               
               <a 
-                href="mailto:hello@architect.dev"
+                href="mailto:flowtiva@gmail.com"
                 className="group flex items-center gap-4 text-2xl md:text-3xl font-medium text-white border-b border-white/20 pb-2 hover:border-stokt-accent hover:text-stokt-accent transition-all"
               >
-                 <span>hello@architect.dev</span>
+                 <span>flowtiva@gmail.com</span>
                  <ArrowUpRight className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
               </a>
            </div>
@@ -65,14 +65,14 @@ export const Footer: React.FC = () => {
               <span className="text-bracket">Availability</span>
               <div className="flex items-center gap-2 text-stokt-accent font-mono text-xs uppercase tracking-widest">
                  <span className="w-2 h-2 bg-stokt-accent rounded-full animate-pulse"></span>
-                 Open for Q4 2024
+                 Open for 2026
               </div>
            </div>
 
         </div>
 
         <div className="mt-16 text-center text-[10px] font-mono text-stokt-border uppercase tracking-widest">
-           © 2024 Architect_OS System v2.4
+           © 2026 Architect_OS System v2.4
         </div>
 
       </div>

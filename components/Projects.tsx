@@ -80,7 +80,7 @@ export const Projects: React.FC = () => {
               <h2 className="text-4xl md:text-6xl text-white font-medium tracking-tighter text-display">
                  Selected <span className="text-stokt-subtext">Projects</span>
               </h2>
-              <span className="hidden md:block text-stokt-subtext font-mono text-xs">[ 2024 - 2025 ]</span>
+              <span className="hidden md:block text-stokt-subtext font-mono text-xs">[ 2024 - 2026 ]</span>
            </div>
            <p className="text-stokt-subtext max-w-xl text-sm leading-relaxed mt-4">
              A collection of production-grade systems, from decentralized P2P streaming engines to autonomous AI agent swarms. Click on any card to view the technical architecture.
@@ -117,7 +117,7 @@ export const Projects: React.FC = () => {
                            target="_blank"
                            rel="noopener noreferrer"
                            onClick={(e) => e.stopPropagation()}
-                           className="p-3 rounded-full bg-stokt-accent text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 hover:bg-white hover:text-black z-30 shadow-lg shadow-stokt-accent/20"
+                           className="p-3 rounded-full bg-stokt-accent text-white opacity-100 translate-y-0 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 transform md:translate-y-4 md:group-hover:translate-y-0 hover:bg-white hover:text-black z-30 shadow-lg shadow-stokt-accent/20"
                            title="Launch Live System"
                          >
                            <ExternalLink size={16} />
@@ -127,7 +127,7 @@ export const Projects: React.FC = () => {
                        {/* View Details Icon */}
                        <div 
                         onClick={(e) => { e.stopPropagation(); setSelectedProject(project); }}
-                        className="p-3 rounded-full bg-white text-black opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 delay-75 hover:bg-white/90 z-20 cursor-pointer"
+                        className="p-3 rounded-full bg-white text-black opacity-100 translate-y-0 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 transform md:translate-y-4 md:group-hover:translate-y-0 md:delay-75 hover:bg-white/90 z-20 cursor-pointer"
                        >
                           <ArrowUpRight size={16} />
                        </div>
@@ -136,7 +136,7 @@ export const Projects: React.FC = () => {
 
                  <div className="space-y-6">
                     <div>
-                      <h3 className="text-3xl md:text-4xl font-medium text-white tracking-tight mb-2 group-hover:text-stokt-accent transition-colors">
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium text-white tracking-tight mb-2 md:group-hover:text-stokt-accent transition-colors">
                          {project.title}
                       </h3>
                       <p className="text-stokt-subtext text-sm font-mono border-l-2 border-stokt-accent pl-3">
@@ -145,7 +145,7 @@ export const Projects: React.FC = () => {
                     </div>
                     
                     {/* Tech Stack Preview (First 3 items) */}
-                    <div className="flex flex-wrap gap-2 opacity-60 group-hover:opacity-100 transition-opacity">
+                    <div className="flex flex-wrap gap-2 opacity-100 md:opacity-60 md:group-hover:opacity-100 transition-opacity">
                       {project.techStack.slice(0, 3).map(tech => (
                         <span key={tech} className="text-[10px] text-stokt-subtext bg-white/5 px-2 py-1 rounded border border-white/5">
                           {tech}

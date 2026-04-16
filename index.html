@@ -74,6 +74,13 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #ff4d1d;
       }
+
+      /* Aggressive mobile shrink for tablet-feel on smartphones */
+      @media (max-width: 640px) {
+        html {
+          font-size: 11px; /* Shrinks all rem-based Tailwind classes to 68.75% sizing */
+        }
+      }
     </style>
   <script type="importmap">
 {
@@ -85,6 +92,7 @@
   }
 }
 </script>
+<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>

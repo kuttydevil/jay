@@ -17,9 +17,9 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Main Title */}
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-medium text-white tracking-tighter leading-[0.9] text-display">
-          SYSTEMS <br />
-          THAT <span className="text-stokt-accent">THINK.</span>
+        <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-medium text-white tracking-tighter leading-[1] md:leading-[0.9] text-display break-words w-full px-2">
+          SYSTEMS <br className="hidden sm:block" />
+          <span className="sm:hidden"> </span>THAT <span className="text-stokt-accent">THINK.</span>
         </h1>
 
         {/* Subtext */}

@@ -38,7 +38,47 @@ export const projects: Project[] = [
       { title: 'Bot Protection', content: 'Specific routing logic in robots.txt and sitemap.xml to guide Googlebot while blocking spider traps.' }
     ],
     links: {
-      demo: 'https://pwolimovies.vercel.app/',
+      demo: 'https://www.pwolimovies.com/',
+      repo: 'https://github.com/kuttydevil/pwoli-movies'
+    }
+  },
+  {
+    id: 'moviefarming',
+    title: 'MovieFarming',
+    tagline: 'Decentralized 4K PWA with Watch Parties.',
+    category: 'Streaming / PWA',
+    executiveSummary: 'MovieFarming is a modern, single-page application (SPA) that aggregates movie and TV show metadata to provide a seamless streaming experience. Unlike traditional sites, it utilizes a decentralized architecture: it scrapes external APIs and torrent networks (WebTorrent) to find content dynamically, meaning it hosts no illegal files directly. It features a Netflix-caliber UI, robust internationalization (i18n), and is optimized to function as both a standalone PWA and a Telegram Mini App.',
+    techStack: [
+      'React 18 (TypeScript)',
+      'Vite',
+      'Tailwind CSS',
+      'SWR',
+      'React Router DOM v6',
+      'PeerJS (WebRTC)',
+      'TMDB API',
+      'Telegram Web App SDK'
+    ],
+    keyFeatures: [
+      { title: 'Hybrid Streaming Engine', content: 'Users can choose between direct HTTP streaming (via iframe embeds) or Peer-to-Peer streaming using Magnet links.' },
+      { title: 'Social Watch Party', content: 'A custom-built room system allowing users to sync video playback with friends in real-time using WebRTC (PeerJS).' },
+      { title: 'Internationalization (i18n)', content: 'Full support for multiple languages with URL-based routing (e.g., /en/, /hi/, /es/).' },
+      { title: 'Smart Search', content: 'A debounced live-search bar with predictive suggestions and segmented filtering (Movies vs. TV).' },
+      { title: 'Progressive Web App (PWA)', content: 'Installable on mobile/desktop with offline fallback capabilities via Service Workers.' },
+    ],
+    architecture: [
+      { title: 'The Data Layer', content: 'Implemented a robust API service layer. Instead of simple fetch calls, used a custom fetchData function with deduplication and in-memory caching. The Torrent Logic hits multiple proxies simultaneously (Promise.allSettled) and cleans filenames using Regex.' },
+      { title: 'The SEO Engine', content: 'A custom hook programmatically updates the <head> of the document, changing Title, Description, and OpenGraph tags based on the current route. Includes smart hreflang generation.' },
+      { title: 'The Watch Party System', content: 'The host generates a PeerID. The app creates a shareable link. When a guest joins, the host sends data packets (sync_magnet, countdown) to synchronize playback instantly.' },
+      { title: 'Telegram Integration', content: 'Detects if running inside Telegram, adapts the UI theme, and utilizes Telegram CloudStorage to sync watch history across devices.' }
+    ],
+    technicalHighlights: [
+      { title: 'Zero-Backend Architecture', content: 'Full-featured streaming platform without a dedicated backend database. All user data is stored client-side or in Telegram cloud.' },
+      { title: 'Complex Regex Parsing', content: 'Advanced Regex patterns to sanitize torrent filenames, extract resolution (4K, 1080p), and determine audio codecs for quality badges.' },
+      { title: 'Performance Optimization', content: 'ServiceWorker implementation with a "Network First" strategy for navigation but aggressive asset caching.' },
+      { title: 'Bot Protection', content: 'Specific routing logic in robots.txt and sitemap.xml to guide Googlebot while blocking spider traps.' }
+    ],
+    links: {
+      demo: 'https://www.moviefarming.com/',
       repo: 'https://github.com/kuttydevil/pwoli-movies'
     }
   },
@@ -75,7 +115,7 @@ export const projects: Project[] = [
       { title: 'Sandboxed Code Execution', content: 'Security layer running AI-generated code in a distinct Worker scope.' }
     ],
     links: {
-      demo: '#',
+      demo: 'https://aibrosky.vercel.app/',
       repo: '#'
     }
   },
@@ -110,7 +150,7 @@ export const projects: Project[] = [
       { title: 'PCM Transcoding', content: 'Manually implemented float32ToInt16PCM conversion to handle raw binary protocols.' }
     ],
     links: {
-      demo: '#',
+      demo: 'https://counci.flowtiva.workers.dev/',
       repo: '#'
     }
   },
@@ -147,7 +187,7 @@ export const projects: Project[] = [
       { title: 'Memory Management', content: 'Implemented strict memory limits (1.5GB) in the WASM transcoder to prevent browser tab crashes.' }
     ],
     links: {
-      demo: 'https://magnetar-psi.vercel.app/',
+      demo: 'https://magnator.flowtiva.workers.dev/',
       repo: '#'
     }
   },
@@ -183,16 +223,16 @@ export const projects: Project[] = [
       { title: 'Error Boundaries', content: 'Defensive scraping logic ensures stability even if source site HTML structures change.' }
     ],
     links: {
-      demo: 'https://pwolisearch.vercel.app/',
+      demo: 'https://pwoliapis.flowtiva.workers.dev',
       repo: '#'
     }
   },
   {
-    id: 'prohome-assist',
-    title: 'ProHome Assist',
+    id: 'qatarpro',
+    title: 'QatarPro',
     tagline: 'AI Diagnostics & PWA.',
     category: 'AI / Service',
-    executiveSummary: 'ProHome Assist is a next-generation service platform for the Qatar market. It uses Google Gemini (Vision + Text) to visually analyze home maintenance problems and conduct structured diagnostic interviews in multiple languages (Arabic, Hindi, Urdu). It requires zero backend infrastructure for bookings, utilizing WhatsApp Deep Linking and Client-Side Canvas generation.',
+    executiveSummary: 'QatarPro is a next-generation service platform for the Qatar market. It uses Google Gemini (Vision + Text) to visually analyze home maintenance problems and conduct structured diagnostic interviews in multiple languages (Arabic, Hindi, Urdu). It requires zero backend infrastructure for bookings, utilizing WhatsApp Deep Linking and Client-Side Canvas generation.',
     techStack: [
       'React 19',
       'TypeScript',
@@ -218,7 +258,7 @@ export const projects: Project[] = [
       { title: 'SEO Engineering', content: 'Embedded massive structured JSON-LD graphs for local business schema.' }
     ],
     links: {
-      demo: 'https://homepro-three.vercel.app/',
+      demo: 'https://qatarpro.flowtiva.workers.dev/',
       repo: '#'
     }
   },
@@ -254,7 +294,7 @@ export const projects: Project[] = [
       { title: 'Defensive Prompting', content: 'Structured prompts with few-shot examples ensure deterministic code generation.' }
     ],
     links: {
-      demo: '#',
+      demo: 'https://pwoliauto.flowtiva.workers.dev/',
       repo: '#'
     }
   },
@@ -358,7 +398,7 @@ export const projects: Project[] = [
       { title: 'Multi-Tenancy RLS', content: 'Strict data isolation ensures users only access their own data.' }
     ],
     links: {
-      demo: 'https://flowtiva.vercel.app/',
+      demo: 'https://aiwa.flowtiva.workers.dev/',
       repo: '#'
     }
   }
