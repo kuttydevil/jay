@@ -4,7 +4,9 @@ export const TechStack: React.FC = () => {
   const stack = [
     "REACT 19", "TYPESCRIPT", "SUPABASE", "PYTHON", "GEMINI AI", 
     "WEBRTC", "WASM", "DOCKER", "KUBERNETES", "TAILWIND", 
-    "VITE", "NEXT.JS", "DENO", "POSTGRESQL", "SELENIUM"
+    "VITE", "NEXT.JS", "DENO", "POSTGRESQL", "SELENIUM",
+    "NODE.JS", "EXPRESS", "ZUSTAND", "INDEXEDDB", "SERVERLESS",
+    "WEB WORKERS", "OPENCV", "FFMPEG", "WEBTORRENT", "TANSTACK"
   ];
 
   return (
